@@ -6,4 +6,6 @@ import com.czq.entity.Person;
 
 public interface PersonDao {
 	List<Person> queryAll();
+	
+	Person queryById(int id);
 }

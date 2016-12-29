@@ -21,9 +21,17 @@ public class PersonController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String getPerson(HttpServletRequest request) {
 		List<Person> list = personService.queryAll();
-		
+
 		request.setAttribute("list", list);
-		
+
+		return "person";
+	}
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public String getPerson(int id, HttpServletRequest request) {
+		Person person = personService.queryById(id);
+
+		request.setAttribute("person", person);
+
 		return "person";
 	}
 }

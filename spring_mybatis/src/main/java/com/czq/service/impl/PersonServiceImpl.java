@@ -21,4 +21,9 @@ public class PersonServiceImpl implements PersonService {
 		return personDao.queryAll();
 	}
 
+	@Override
+	public Person queryById(int id) {
+		return personDao.queryById(id);
+	}
+
 }

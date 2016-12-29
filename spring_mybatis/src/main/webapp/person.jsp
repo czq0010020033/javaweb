@@ -19,7 +19,7 @@
 
 <body>
 	<c:choose>
-		<c:when test="${list==null || fn:length(list) == 0 }">
+		<c:when test="${list==null}">
 			<tr>
 				<td>list为空</td>
 			</tr>
@@ -27,14 +27,14 @@
 		<c:otherwise>
 			<table border="1">
 				<tr>
-				<th>id</th>
-				<th>accountId</th>
-				<th>realName</th>
-				<th>age</th>
-				<th>sex</th>
-				<th>cardId</th>
-				<th>address</th>
-				<th>telephone</th>
+					<th>id</th>
+					<th>accountId</th>
+					<th>realName</th>
+					<th>age</th>
+					<th>sex</th>
+					<th>cardId</th>
+					<th>address</th>
+					<th>telephone</th>
 				</tr>
 				<c:forEach items="${list}" var="item" varStatus="status">
 					<tr>
@@ -51,5 +51,30 @@
 			</table>
 		</c:otherwise>
 	</c:choose>
+
+	<c:if test="${person != null}">
+		<table border="1">
+			<tr>
+				<th>id</th>
+				<th>accountId</th>
+				<th>realName</th>
+				<th>age</th>
+				<th>sex</th>
+				<th>cardId</th>
+				<th>address</th>
+				<th>telephone</th>
+			</tr>
+			<tr>
+				<td>${person.id}</td>
+				<td>${person.accountId}</td>
+				<td>${person.realName}</td>
+				<td>${person.age}</td>
+				<td>${person.sex}</td>
+				<td>${person.cardId}</td>
+				<td>${person.address}</td>
+				<td>${person.telephone}</td>
+			</tr>
+		</table>
+	</c:if>
 </body>
 </html>
